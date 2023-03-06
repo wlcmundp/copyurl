@@ -5,19 +5,15 @@
 </head>
 <body>
 	<script>
-		// Get the value of the parameter from the URL
 		var urlParams = new URLSearchParams(window.location.search);
 		var textToCopy = urlParams.get('url');
 
-		// Copy textToCopy to clipboard
         navigator.clipboard.writeText(textToCopy).then(function() {
-            console.log('Async: Copying to clipboard was successful!');
-	    window.close();
+            document.getElementById("copystatus").innerHTML = "Copied to clipboard, you may close the tab now";
         }, function(err) {
-            console.error('Async: Could not copy text: ', err);
-	    window.close();
+            document.getElementById("copystatus").innerHTML = "Error: Copy to clipboard failed";
         });
-        
 	</script>
+    <div id="copystatus"></div>
 </body>
 </html>
