@@ -1,0 +1,29 @@
+<!-- write a html page with an onpage javascript, which looks for the parameter ?url= and copies the text afterwards to the clipboard, then close the brower tab  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy to Clipboard</title>
+</head>
+<body>
+	<script>
+		// Get the value of the parameter from the URL
+		var urlParams = new URLSearchParams(window.location.search);
+		var textToCopy = urlParams.get('url');
+
+		// Copy textToCopy to clipboard
+        function copyToClipboard(text) {
+          var dummy = document.createElement("textarea");
+          document.body.appendChild(dummy);
+          dummy.value = text;
+          dummy.select();
+          document.execCommand("copy");
+          document.body.removeChild(dummy);
+        }
+        copyToClipboard(textToCopy);
+        
+        // close the tab
+        window.close();
+	</script>
+</body>
+</html>
