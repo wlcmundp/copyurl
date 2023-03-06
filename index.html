@@ -5,8 +5,8 @@
 </head>
 <body>
 	<script>
-		var urlParams = new URLSearchParams(window.location.search);
-		var textToCopy = urlParams.get('url');
+        var url = window.location.href;
+        var textToCopy = url.substring(url.indexOf("?url=") + 5);
 
         navigator.clipboard.writeText(textToCopy).then(function() {
             document.getElementById("copystatus").innerHTML = "Copied to clipboard, you may close the tab now";
