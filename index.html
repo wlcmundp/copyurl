@@ -12,12 +12,12 @@
 		// Copy textToCopy to clipboard
         navigator.clipboard.writeText(textToCopy).then(function() {
             console.log('Async: Copying to clipboard was successful!');
+	    window.close();
         }, function(err) {
             console.error('Async: Could not copy text: ', err);
+	    window.close();
         });
         
-        // close the tab
-        window.close();
 	</script>
 </body>
 </html>
