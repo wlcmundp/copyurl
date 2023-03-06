@@ -10,6 +10,7 @@
 		// Get the value of the parameter from the URL
 		var urlParams = new URLSearchParams(window.location.search);
 		var textToCopy = urlParams.get('url');
+		console.log(textToCopy);
 
 		// Copy textToCopy to clipboard
         function copyToClipboard(text) {
